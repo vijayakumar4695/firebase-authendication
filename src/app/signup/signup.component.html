@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+    
+<form #personForm="ngForm"(ngSubmit)="onSignup(personForm.value)">
+    <div class="login">
+          <div class="form-group">
+                <h1 class="text-center"> Signup </h1>
+          </div> 
+                           <div class="form-group">
+                                <label for="pwd">Email Id:</label>
+                                       <input type="text" name="email" class="form-control" id="email" [(ngModel)]="email" placeholder=" Email-id"#Email="ngModel"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required ngModel>
+                                            <div *ngIf="Email.errors && (Email.touched|| Email.dirty)" class="alert text-light">
+                                               <div id="msg" [hidden]="!Email.errors.required">
+                                                   Emailid required
+                                               </div>
+                                                     <div id="msg" [hidden]="!Email.errors.pattern">
+                                                         Please enter valid email
+                                                    </div>                                                      
+                                            </div>
+                           </div>
+            
+                          <div class="form-group">
+                              <label for="pwd">Password:</label>
+                                    <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" placeholder="Password" #Password="ngModel" minlength="8" required  ngModel>
+                                           <div *ngIf="Password.errors && (Password.touched|| Password.dirty)" class="alert text-light">
+                                               <div id="msg" [hidden]="!Password.errors.required">
+                                                   Password requried
+                                               </div>
+                                                     <div id="msg" [hidden]="!Password.errors.minlength">
+                                                        Please enter minimum 8 character
+                                                     </div>
+                                           </div>
+                          </div>
+
+                          <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-success" [disabled]="!personForm.form.valid"><span style="color:black"data-toggle="modal" data-target="#myModal">Signup</span></button> 
+                          </div>
+                                   <div class="col-md-12 text-center">
+                                       <a routerLink="/login"><p>Alread You Have Account ?</p></a>
+                                  </div>
+       </div>
+</form>
+  
+</div>
+</div>
+</div>
+

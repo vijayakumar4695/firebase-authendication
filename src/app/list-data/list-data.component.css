@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+    padding: 0px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+td{
+    color:white;
+}
+.container{
+    overflow-x: auto;
+}
+#con1{
+    border:2px solid black;
+    
+}

@@ -1,0 +1,10 @@
+h1{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+.container-fluid{
+    background:url("src/assets/img/back1.jpg")
+
+}
